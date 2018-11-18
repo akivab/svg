@@ -489,11 +489,11 @@ class Path(Transformable):
 
         return ret
 
-    def simplify(self, precision):
+    def simplify(self, n, precision):
         '''Simplify segment with precision:
            Remove any point which are ~aligned'''
         ret = []
-        for seg in self.segments(precision):
+        for seg in self.segments(n):
             ret.append(simplify_segment(seg, precision))
 
         return ret
